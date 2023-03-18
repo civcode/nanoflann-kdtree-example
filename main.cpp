@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <set>
+#include <numeric>
 #include "KDTreeVectorOfVectorsAdaptor.h"
 
 #define MEASUREMENTS 600
@@ -198,9 +199,9 @@ int main(int argc, char **argv) {
     for (auto index:random_indices){
 
         //index is just a number to index the vector of vectors
-        cout << "looking for point:" << index << endl;
+        cout << "looking for point: " << index << endl;
         auto coordinates=kdtree_points.at(index);
-        std::for_each(coordinates.cbegin(),coordinates.cend(),[](double d){cout<<d<<",";});
+        std::for_each(coordinates.cbegin(),coordinates.cend(),[](double d){cout<<d<<", ";});
         cout<<endl;
 
         t1 = std::chrono::high_resolution_clock::now();
